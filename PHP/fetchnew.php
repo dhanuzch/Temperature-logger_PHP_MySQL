@@ -14,18 +14,23 @@ if ($conn->connect_error) {
 } 
  
 // Writing a mysql query to retrieve data  
-$sql = "SELECT ID, humidity, temperature, TIME FROM dht11"; 
+$sql = "SELECT ID, humidity, temperature,time FROM dht11 
+ORDER BY id DESC 
+LIMIT 0,1 "; 
+
 $result = $conn->query($sql); 
- 
+
 if ($result->num_rows > 0) { 
-  // Show each data returned by mysql 
-  while($row = $result->fetch_assoc()) { 
+    // Show each data returned by mysql 
+    while($row = $result->fetch_assoc()) { 
+
 ?> 
-	 
+	 <meta http-equiv="refresh" content="30" > 
 	<!-- USING HTML HERE : Here I am using php within html tags --> 
     <p> Humidity: <?php echo $row["humidity"]; ?> </p> 
     <p> Temperature: <?php echo $row["temperature"]; ?> </p> 
-    <p> Time: <?php echo $row["TIME"]; ?> </p> 
+    <p> Time: <?php echo $row["time"]; ?> </p>
+    
  
 <?php 
   } 
