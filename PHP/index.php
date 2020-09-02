@@ -14,11 +14,12 @@ if ($conn->connect_error) {
 
 $temperature = '';
 $humidity = '';
+$time = '';
 
 // fetch  
 $sql = "SELECT * FROM dht11
 ORDER BY id DESC 
-LIMIT 0,10"; 
+LIMIT 0,20"; 
 
 $result = mysqli_query($conn, $sql);
 
@@ -26,10 +27,12 @@ while ($row = mysqli_fetch_array($result)) {
 
 	$temperature = $temperature . '"'. $row['temperature'].'",';
 	$humidity = $humidity . '"'. $row['humidity'] .'",';
+	$time = $time . '"'. $row['time'] .'",';
 }
 
 $temperature = trim($temperature,",");
 $humidity = trim($humidity,","); 
+$time = trim($time,","); 
 
 ?> 
 
@@ -104,7 +107,7 @@ $humidity = trim($humidity,",");
 		var myChart = new Chart(ctx, {
 			type: 'line',
 			data: {
-				
+				labels: [<?php echo $time; ?>],
 				datasets: 
 				[{
 					label: 'Temperature',
@@ -115,9 +118,16 @@ $humidity = trim($humidity,",");
 				}]
 			},
 
-			
-			options: {
-				scales: {scales:{yAxes: [{beginAtZero: false}], xAxes: [{autoskip: true, maxTicketsLimit: 20}]}},
+
+			options: {scales: {scales:{
+				yAxes: [{display: true, ticks: {
+            min: 0,
+            max: 400,
+            stepSize: 10
+        }}], 
+				xAxes: [{display:true}]
+				}
+				},
 				tooltips:{mode: 'index'},
 				legend:{display: true, position: 'top', labels: {fontColor: 'rgb(0,0,0)', fontSize: 16}}
 			}
@@ -128,9 +138,9 @@ $humidity = trim($humidity,",");
 	<script>
 		var ctx = document.getElementById('myChart2').getContext('2d');;
 		var myChart = new Chart(ctx, {
-			type: 'bar',
+			type: 'line',
 			data: {
-				
+				labels: [<?php echo $time; ?>],
 				datasets: 
 				[{
 					label: 'humidity',
