@@ -10,5 +10,6 @@ Display Data from NodeMCU in webpage
 3. ~~Add CSS and make it look good, preferably add Gauges to display Data~~
 4. ~~Set Graph axes min and max~~
 5. ~~Display latest 15 Data in Graph~~
+6. Work on readme
 
  
