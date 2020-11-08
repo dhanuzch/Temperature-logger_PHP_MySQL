@@ -1,7 +1,7 @@
 # DHT11_Datalogger_HTML_CSS_JS_PHP_MySQL
 
 ## Working:
-Display Data from NodeMCU in webpage
+Display Data from NodeMCU as a graph in webpage
 
 ## TODO
 
