@@ -18,10 +18,10 @@ float humidityData;
 float temperatureData;
 
 
-const char* ssid = "ACT108374467862";
-const char* password = "16047668";
+const char* ssid = "INSERT_YOUR_SSID_HERE";
+const char* password = "INSERT_YOUR_PASSWORD_HERE";
 
-char server[] = "192.168.0.104";   
+char server[] = "INSERT_THE_IP_ADDRESS_HERE";   
 
 
 WiFiClient client;    
