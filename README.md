@@ -1,4 +1,4 @@
-# DHT11_Datalogger_HTML_CSS_JS_PHP_MySQL
+# Temperature-logger_PHP_MySQL
 
 ## Working:
 Display Temperature and humidity Data from NodeMCU as a graph in webpage
