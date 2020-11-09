@@ -14,6 +14,7 @@ Display Temperature and humidity Data from NodeMCU as a graph in webpage
 ## How to use?
 1. Upload the code in `Arduino Sketch` to NodeMCU
 2. Paste the `PHP` folder in `htdocs` folder
+3. Start visualizing temperature and humidity data by opening `index.php`
 
 
 ## Libraries needed:
