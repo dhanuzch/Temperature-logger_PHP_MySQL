@@ -10,6 +10,14 @@ Display Temperature and humidity Data from NodeMCU as a graph in webpage
 4. Added CSS, so visually looks better.
 5. Out of the box compatibility with NodeMCU. For other MCUs minor alterations are needed.
 
+## Libraries needed:
+1. DHT.h
+2. WiFiClient.h
+3. ESP8266WiFi.h
+4. ESP8266WebServer.h
+5. ESP8266mDNS.h
+6. SPI.h
+
 ## TODO
 
 1. ~~Auto Refresh~~
