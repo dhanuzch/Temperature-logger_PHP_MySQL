@@ -66,8 +66,8 @@ void loop()
    if (client.connect(server, 80)) {
     Serial.println("connected");
     // Make a HTTP request:
-    Serial.print("GET /DHT11test/insert.php?humidity=");
-    client.print("GET /DHT11test/insert.php?humidity=");     
+    Serial.print("GET /DHT11test/fetch.php?humidity=");
+    client.print("GET /DHT11test/fetch.php?humidity=");     
     Serial.println(humidityData);
     client.print(humidityData);
     client.print("&temperature=");
